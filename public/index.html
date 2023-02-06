@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soy Case</title>
+
+    <style>
+      .container {
+        width: 80%;
+        margin: auto;
+      }
+      form {
+        font-family: Arial, sans-serif;
+        color: #333;
+      }
+
+
+      input[type='submit'] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+      }
+
+      input[type='submit']:hover {
+        background-color: #45a049;
+        text-align: center;
+      }
+
+      h1{
+        padding: 40px 0;
+        text-align: center;
+      }
+
+
+      #soyForm {
+        border: 1px solid #000;
+        padding: 2rem;
+        border-radius: 2rem;
+      }
+
+      #soyForm div {
+        margin-bottom: 1rem;
+      }
+
+      #soyForm div select{
+        width: 100% !important;
+        padding: 10px 15px;
+        margin-top: 8px;
+      }
+
+    #soyForm div:last-child {
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div>
+        <h1>Soy Case</h1>
+    </div>
+
+    <a href="case.html">
+        Consulta
+    </a>
+
+    <div class="container">
+        <form id="soyForm">
+            <div>
+                <label for="area_damaged">Area Danificada: </label>
+                <select id="area_damaged" name="area_damaged">
+                    <option value= 0>Desconhecido</option>
+                    <option value=1>Espalhado</option>
+                    <option value=2>Areas Baixas</option>
+                    <option value=3>Areas Superiores</option>
+                    <option value=4>Campo Inteiro</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="canker_lesion">Lesao de Cancro: </label>
+                <select id="canker_lesion" name="canker_lesion">
+                    <option value= 0 >Desconhecido</option>
+                    <option value=1>Dna</option>
+                    <option value=2>Marrom</option>
+                    <option value=3>Marrom Escuro</option>
+                    <option value=4>Bronzeado</option>
+                </select>
+            </div>
+    
+            <div>
+                <label for="crop_hist">Histologia de Corte: </label>
+                <select id="crop_hist" name="crop_hist">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Diferente do 1º Ano</option>
+                    <option value=2>Igual 1º Ano</option>
+                    <option value=3>Igual aos 1ºs Dois Anos</option>
+                    <option value=4>Igual aos lºs 7 anos</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="date">Date: </label>
+                <select id="date" name="date">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Janeiro</option>
+                    <option value=2>Fevereiro</option>
+                    <option value=3>Março</option>
+                    <option value=4>Abril</option>
+                    <option value=5>Maio</option>
+                    <option value=6>Junho</option>
+                    <option value=7>Julho</option>
+                    <option value=8>Agosto</option>
+                    <option value=9>Setembro</option>
+                    <option value=10>Outubro</option>
+                    <option value=11>Novembro</option>
+                    <option value=12>Dezembro</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="external_decay">Clima: </label>
+                <select id="external_decay" name="external_decay">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Firme e Seco</option>
+                    <option value=3>Chuvoso</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="fruit_spots">Mancha Frutífera: </label>
+                <select id="fruit_spots" name="fruit_spots">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Normal</option>
+                    <option value=2>Doente</option>
+                    <option value=3>Pouco Presente</option>
+                    <option value=4>DNA</option>
+                </select>
+            </div>  
+
+            <div>
+                <label for="fruiting_bodies">Corpo Frutífero: </label>
+                <select id="fruiting_bodies" name="fruiting_bodies">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Colorida</option>
+                    <option value=3>Marrom Com Manchas Pretas</option>
+                    <option value=4>Alterada</option>
+                    <option value=5>Dna</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="fruit_pods">Vagem Frutífera: </label>
+                <select id="fruit_pods" name="fruit_pods">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Presente</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="germination">Germinação: </label>
+                <select id="germination" name="germination" type="number">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>90% - 100%</option>
+                    <option value=2>80% - 89%</option>
+                    <option value= 3 >lt - 80%</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="hail">Granizo: </label>
+                <select id="hail" name="hail" type="number">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Sim</option>
+                    <option value=2>Não</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="int_discolor">Descoloração: </label>
+                <select id="int_discolor" name="int_discolor">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Nenhuma</option>
+                    <option value=2>Marrom</option>
+                    <option value=3>Preto</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="leaf_malf">Malformação Da Folha: </label>
+                <select id="leaf_malf" name="leaf_malf">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Presente</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="leaf_mild">Folha Mofada: </label>
+                <select id="leaf_mild" name="leaf_mild">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Sobre Superficie</option>
+                    <option value=3>Sob Superficie</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="leaf_shread">Folha Seca: </label>
+                <select id="leaf_shread" name="leaf_shread">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Presente</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="leafspots_halo">Mancha no Halo : </label>
+                <select id="leafspots_halo" name="leafspots_halo">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Halo Amarelo</option>
+                    <option value=3>Sem Halo Amarelo</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="leafspot_size">Tamanho Mancha: </label>
+                <select id="leafspot_size" name="leafspot_size">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Menor que - 1/8</option>
+                    <option value=2>Maior - 1/8</option>
+                    <option value=3>Dna</option>
+            </select>
+            </div>
+
+            <div>
+                <label for="leafspots_marg">Borda Manchada: </label>
+                <select id="leafspots_marg" name="leafspots_marg">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Sem Borda W</option>
+                    <option value=2>Sem Borda W</option>
+                    <option value=3>Dna</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="leaves">Folhas: </label>
+                <select id="leaves" name="leaves">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Normal</option>
+                    <option value=2>Anormal</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="lodging">Acamamento: </label>
+                <select id="lodging" name="lodging">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Sim</option>
+                    <option value=2>No</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="mold_growth">Crescimento de Mofo: </label>
+                <select id="mold_growth" name="mold_growth">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Presente</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="mycelium">Micelio: </label>
+                <select id="mycelium" name="mycelium">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Presente</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="plant_growth">Crescimento da Planta: </label>
+                <select id="plant_growth" name="plant_growth">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Normal</option>
+                    <option value=2>Anormal</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="plant_stand">Tamanho da Planta </label>
+                <select id="plant_stand" name="plant_stand">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Normal</option>
+                    <option value=2>Anormal</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="precip">Chuva: </label>
+                <select id="precip" name="precip">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Menor do que Normal</option>
+                    <option value=2>Normal</option>
+                    <option value=3>Maior que o Normal</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="roots">Raizes: </label>
+                <select id="roots" name="roots">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Normal</option>
+                    <option value=2>Enraizado</option>
+                    <option value=3>Cistos no Galhos</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="sclerotia">Esclerócio: </label>
+                <select id="sclerotia" name="sclerotia">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Presente</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="seed">Semente: </label>
+                <select id="seed" name="seed">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Normal</option>
+                    <option value=2>Anormal</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="seed_discolor">Descoloracao da Semente: </label>
+                <select id="seed_discolor" name="seed_discolor">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Presente</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="seed_size">Tamanho da Semente: </label>
+                <select id="seed_size" name="seed_size">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Normal</option>
+                    <option value=2>Menor que o Normal</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="seed_tmt">Tratamento da Semente: </label>
+                <select id="seed_tmt" name="seed_tmt">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Fungicida</option>
+                    <option value=3>Outros</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="severity">Gravidade: </label>
+                <select id="severity" name="severity">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Mínimo</option>
+                    <option value=2>Pouco Severo</option>
+                    <option value=3>Severo</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="shriveling">Murchando: </label>
+                <select id="shriveling" name="shriveling">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Presente</option>
+                    <option value=3>Severo</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="stem">Tronco: </label>
+                <select id="stem" name="stem">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Normal</option>
+                    <option value=2>Anormal</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="stem_cankers">Cancro no Tronco: </label>
+                <select id="stem_cankers" name="stem_cankers">
+                    <option value= 0 >Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Abaixo do Solo</option>
+                    <option value=3>Acima do Solo</option>
+                    <option value=4>Abaixo do Nodo</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="temp">Temperatura: </label>
+                <select id="temp" name="temp">
+                    <option value=0>Desconhecido</option>
+                    <option value=1>Ausente</option>
+                    <option value=2>Menor do que o Normal</option>
+                    <option value=3>Normal</option>
+                    <option value=4>Maior que o Normal</option>
+                </select>
+            </div>
+            <input type="submit" value="Enviar" />
+
+        </form>
+    </div>
+
+    <script>
+        soyForm.addEventListener('submit', async e => {
+        e.preventDefault();
+
+        const area_damaged_input = parseFloat(document.getElementById('area_damaged').value);
+        const canker_lesion_input = parseFloat(document.getElementById('canker_lesion').value);
+        const crop_hist_input = parseFloat(document.getElementById('crop_hist').value);
+        const date_input = parseFloat(document.getElementById('date').value);
+        const external_decay_input = parseFloat(document.getElementById('external_decay').value);
+        const fruit_spots_input = parseFloat(document.getElementById('fruit_spots').value);
+        const fruiting_bodies_input = parseFloat(document.getElementById('fruiting_bodies').value);
+        const fruit_pods_input = parseFloat(document.getElementById('fruit_pods').value);
+        const germination_input = parseFloat(document.getElementById('germination').value);
+        const hail_input = parseFloat(document.getElementById('hail').value);
+        const int_discolor_input = parseFloat(document.getElementById('int_discolor').value);
+        const leaf_malf_input = parseFloat(document.getElementById('leaf_malf').value);
+        const leaf_mild_input = parseFloat(document.getElementById('leaf_mild').value);
+        const leaf_shread_input = parseFloat(document.getElementById('leaf_shread').value);
+        const leafspots_halo_input = parseFloat(document.getElementById('leafspots_halo').value);
+        const leafspot_size_input = parseFloat(document.getElementById('leafspot_size').value);
+        const leafspots_marg_input = parseFloat(document.getElementById('leafspots_marg').value);
+        const leaves_input = parseFloat(document.getElementById('leaves').value);
+        const lodging_input = parseFloat(document.getElementById('lodging').value);
+        const mold_growth_input = parseFloat(document.getElementById('mold_growth').value);
+        const mycelium_input = parseFloat(document.getElementById('mycelium').value);
+        const plant_growth_input = parseFloat(document.getElementById('plant_growth').value);
+        const plant_stand_input = parseFloat(document.getElementById('plant_stand').value);
+        const precip_input = parseFloat(document.getElementById('precip').value);
+        const roots_input = parseFloat(document.getElementById('roots').value);
+        const sclerotia_input = parseFloat(document.getElementById('sclerotia').value);
+        const seed_input = parseFloat(document.getElementById('seed').value);
+        const seed_discolor_input = parseFloat(document.getElementById('seed_discolor').value);
+        const seed_size_input = parseFloat(document.getElementById('seed_size').value);
+        const seed_tmt_input = parseFloat(document.getElementById('seed_tmt').value);
+        const severity_input = parseFloat(document.getElementById('severity').value);
+        const shriveling_input = parseFloat(document.getElementById('shriveling').value);
+        const stem_input  = parseFloat(document.getElementById('stem').value);
+        const stem_cankers_input = parseFloat(document.getElementById('stem_cankers').value);
+        const temp_input = parseFloat(document.getElementById('temp').value)
+
+        await fetch('/send-message', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+
+
+          body: JSON.stringify({
+            area_damaged: area_damaged_input,
+            canker_lesion: canker_lesion_input,
+            crop_hist: crop_hist_input,
+            date: date_input,
+            external_decay: external_decay_input,
+            fruit_spots: fruit_spots_input,
+            fruiting_bodies: fruiting_bodies_input,
+            fruit_pods: fruit_pods_input,
+            germination: germination_input,
+            hail: hail_input,
+            int_discolor: int_discolor_input,
+            leaf_malf: leaf_malf_input,
+            leaf_mild: leaf_mild_input,
+            leaf_shread: leaf_shread_input,
+            leafspots_halo: leafspots_halo_input,
+            leafspot_size: leafspot_size_input,
+            leafspots_marg: leafspots_marg_input,
+            leaves: leaves_input,
+            lodging: lodging_input,
+            mold_growth: mold_growth_input,
+            mycelium: mycelium_input,
+            plant_growth: plant_growth_input,
+            plant_stand: plant_stand_input,
+            precip: precip_input,
+            roots: roots_input,
+            sclerotia: sclerotia_input,
+            seed: seed_input,
+            seed_discolor: seed_discolor_input,
+            seed_size: seed_size_input,
+            seed_tmt: seed_tmt_input,
+            severity: severity_input,
+            shriveling: shriveling_input,
+            stem: stem_input,
+            stem_cankers: stem_cankers_input,
+            temp: temp_input
+          }),
+        })
+
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+        window.location.href="case.html"
+
+      });
+    </script>
+  </body>
+</html>

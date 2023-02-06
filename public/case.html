@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Fetch</title>
+</head>
+<body>
+    <h1>Lista de Casos</h1>
+    <div class="container">
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>Caso: </th>
+                    <th>S.G: </th>
+                    <th>DescDoenca: </th>
+                </tr>
+            </thead>
+            <tbody id="data">
+            </tbody>
+        
+        </table>
+        
+        
+        </div>
+    <script>
+         //Json Javascript notation
+         fetch("https://sheet.best/api/sheets/233c3d65-08b2-45e8-87bb-ece4e7a611f3")
+         .then(response => response.json())
+         .then(data =>{
+
+           console.log(data)
+        //    for(i=0; i<data.length; i=i+1){
+        //       console.log(data[i])
+        //    }
+
+           if(data.length > 0){
+            
+    var  temp = "";
+    data1 =   data.sort(function(a,b){
+        return a.Similaridade > b.Similaridade ? -1 : (a.Similaridade < b.Similaridade) ? 1:0
+    })
+    data1.forEach((u) => {
+        temp += "<tr>"
+        temp += "<td>"+ u.Caso +"</td>"
+        temp += "<td>"+u.Similaridade+"</td>"
+        temp += "<td>"+u.Doença+"</td></tr>"
+    })
+    document.getElementById("data").innerHTML = temp;
+}
+         })
+    </script>
+</body>
+</html>
