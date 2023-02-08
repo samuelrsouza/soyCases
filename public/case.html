@@ -4,28 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Fetch</title>
+    <title>Lista de Casos</title>
+
+    <style>
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: #04AA6D;
+            }
+
+        #casos {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #casos td, #casos th {
+            border: 2px solid #ddd;
+            padding: 8px;
+        }
+
+        #casos tr:nth-child(even){background-color: #f2f2f2;}
+
+        #casos tr:hover {background-color: #ddd;}
+
+        #casos th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <h1>Lista de Casos</h1>
     <div class="container">
-        <table class="table table-stripped">
+        <a href="/" class="button" type="button">Voltar</a>
+        <table id="casos" class="table table-stripped">
             <thead>
                 <tr>
                     <th>Caso: </th>
-                    <th>S.G: </th>
-                    <th>DescDoenca: </th>
+                    <th>Similaridade Global: </th>
+                    <th>Descrição de Doença: </th>
                 </tr>
             </thead>
             <tbody id="data">
             </tbody>
-        
         </table>
-        
-        
-        </div>
+    </div>
     <script>
-         //Json Javascript notation
+
+         //Notação Json Javascript
          fetch("https://sheet.best/api/sheets/233c3d65-08b2-45e8-87bb-ece4e7a611f3")
          .then(response => response.json())
          .then(data =>{
@@ -35,17 +72,19 @@
         //       console.log(data[i])
         //    }
 
-           if(data.length > 0){
-            
+    
+    if(data.length > 0){
+        
     var  temp = "";
+    
     data1 =   data.sort(function(a,b){
         return a.Similaridade > b.Similaridade ? -1 : (a.Similaridade < b.Similaridade) ? 1:0
     })
     data1.forEach((u) => {
         temp += "<tr>"
         temp += "<td>"+ u.Caso +"</td>"
-        temp += "<td>"+u.Similaridade+"</td>"
-        temp += "<td>"+u.Doença+"</td></tr>"
+        temp += "<td>"+ u.Similaridade+"</td>"
+        temp += "<td>"+ u.Doença+"</td></tr>"
     })
     document.getElementById("data").innerHTML = temp;
 }

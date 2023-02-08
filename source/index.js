@@ -2,7 +2,7 @@
 import express from 'express';
 // import { instance } from 'gaxios';
 
-
+//Zod é uma biblioteca de declaração e validação de esquema TypeScript-first
 import { z, ZodError } from 'zod'
 
 import sheets, { SHEET_ID } from './sheetClient.js';
@@ -10,6 +10,8 @@ import sheets, { SHEET_ID } from './sheetClient.js';
 
 const app = express();
 
+
+//elimina declarações de tipo duplicadas
 const soyFormSchema = z.object({
     area_damaged: z.number(),
     canker_lesion: z.number(),
@@ -48,13 +50,23 @@ const soyFormSchema = z.object({
     temp: z.number()
 })
 
+//express.json() é uma função de middleware integrado no Express
+//analisa conjuntos de dados JSON, texto, codificados em URL em um body request em HTTP
+//analisa solicitações JSON recebidas e coloca os dados analisados ​​em req.body
+
 app.use(express.json());
+
+//para acessar os arquivos da pasta 'public' via HTTP
 app.use(express.static('public'));
 
 
+//definição do request handler(controlador)
 app.post('/send-message', async (req, res) => {
 
     try{
+      
+    //req.body contém pares chave-valor de dados enviados no corpo da solicitação
+    //por padrão, ele é indefinido e preenchido quando é utilizado o middleware chamado body parsing - express.json()
     const body = soyFormSchema.parse(req.body);
 
     const rows = Object.values(body);
@@ -62,10 +74,13 @@ app.post('/send-message', async (req, res) => {
     console.log(rows);
     
 
+    //anexa valores a planilha de casos
     await sheets.spreadsheets.values.append({
         spreadsheetId: SHEET_ID,
         range: 'Página1!D313:AL313',
+        //determina como os dados existentes são alterados quando novos dados são inseridos
         insertDataOption: 'OVERWRITE',
+        //determina como os dados de entrada devem ser interpretados.
         valueInputOption: 'RAW',
         requestBody: {
           values: [rows],
@@ -81,7 +96,6 @@ app.post('/send-message', async (req, res) => {
         } else {
           res.status(400).json({ error });
         }
-        console.log(res);
     }
 });
 

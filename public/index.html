@@ -7,6 +7,27 @@
     <title>Soy Case</title>
 
     <style>
+    .button {
+        border: none;
+        color: white;
+        padding: 12px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: auto;
+        cursor: pointer;
+        background-color: #04AA6D;
+        margin-left: 670px;
+        margin-bottom: 50px;
+
+    }
+    
+    .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+
       .container {
         width: 80%;
         margin: auto;
@@ -18,7 +39,7 @@
 
 
       input[type='submit'] {
-        background-color: #4caf50;
+        background-color: #04AA6D;
         color: white;
         padding: 12px 20px;
         border: none;
@@ -26,7 +47,7 @@
       }
 
       input[type='submit']:hover {
-        background-color: #45a049;
+        background-color: #04AA6D;
         text-align: center;
       }
 
@@ -65,7 +86,7 @@
         <h1>Soy Case</h1>
     </div>
 
-    <a href="case.html">
+    <a class="button" href="case.html">
         Consulta
     </a>
 
@@ -428,6 +449,7 @@
     </div>
 
     <script>
+        
         soyForm.addEventListener('submit', async e => {
         e.preventDefault();
 
@@ -467,13 +489,14 @@
         const stem_cankers_input = parseFloat(document.getElementById('stem_cankers').value);
         const temp_input = parseFloat(document.getElementById('temp').value)
 
+        //inicia uma solicitação HTTP para a URL
         await fetch('/send-message', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
 
-
+        //passa uma string de JSON como entrada
           body: JSON.stringify({
             area_damaged: area_damaged_input,
             canker_lesion: canker_lesion_input,
